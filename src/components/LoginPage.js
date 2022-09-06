@@ -1,5 +1,6 @@
 import React from 'react'
 import { UserAccount } from './UserAccount'
+import {Link} from 'react-router-dom'
 
 export const LoginPage = () => {
     return (
@@ -14,6 +15,7 @@ export const LoginPage = () => {
                     <p class="repeat-password">تکراررمز</p>
                     <input class="inputemail" type="password" /><br></br><br></br>
                     <button type="button" class="btn btn-success">ورود</button><br></br><br></br>
+                    <Link to='/User'>ایجادحساب کاربری جدید</Link>
                     <a href={UserAccount} class="link">ایجاد حساب کاربری جدید</a>
                 </div>
             </div>
