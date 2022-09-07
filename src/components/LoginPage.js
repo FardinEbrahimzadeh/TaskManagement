@@ -15,7 +15,9 @@ export const LoginPage = () => {
                     <p class="repeat-password">تکراررمز</p>
                     <input class="inputemail" type="password" /><br></br><br></br>
                     <button type="button" class="btn btn-success">ورود</button><br></br><br></br>
+                    {/* <nav>
                     <Link to='/User'>ایجادحساب کاربری جدید</Link>
+                    </nav> */}
                     <a href={UserAccount} class="link">ایجاد حساب کاربری جدید</a>
                 </div>
             </div>
