@@ -14,14 +14,12 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 100px;
-  width: 190px;
+  width: 302px;
+  /* padding: 20px; */
   text-align: center;
   /* border: 1px solid red ; */
 }
 
-div2 {
-  text-align: left;
-}
 
 .link {
   text-decoration: none;
@@ -43,4 +41,17 @@ text-align: right;
   width: 194px;
   text-align: center;
   /* border: 1px solid red ; */
+}
+.input-group-text{
+color:brown ;
+background:#E9ECEF ;
+padding:6px 12px ;
+
+}
+.form-control{
+  background:#FFFFFF ;
+  padding: 6px 12px;
+}
+#btn{
+  width: 301px;
 }
