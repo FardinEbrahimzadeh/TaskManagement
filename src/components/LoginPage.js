@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { MySvg } from "../icon-components/Svg";
 // import {footer} from './icons/footer.svg';
-import {Svg} from  './icon-components/svg.js'
 
 export const LoginPage = () => {
   return (
@@ -11,14 +11,26 @@ export const LoginPage = () => {
         <div className="div3">
           <p className="email">ایمیل</p>
           <div className="input-group mb-3">
-            <input type="text" className="form-control" aria-label="Recipient's email" aria-describedby="basic-addon2" />
+            <input
+              type="text"
+              className="form-control"
+              aria-label="Recipient's email"
+              aria-describedby="basic-addon2"
+            />
           </div>
           <p className="password">رمزعبور</p>
           <div className="input-group mb-3">
-            <input type="text" className="form-control" aria-label="Recipient's password" aria-describedby="basic-addon2" />
+            <input
+              type="text"
+              className="form-control"
+              aria-label="Recipient's password"
+              aria-describedby="basic-addon2"
+            />
           </div>
           <br></br>
-          <button type="button" id="btn" className="btn btn-warning">ورود</button>
+          <button type="button" id="btn" className="btn btn-warning">
+            ورود
+          </button>
           <br></br>
           <br></br>
           <Link className="link" id="link" to="/User">
@@ -26,7 +38,7 @@ export const LoginPage = () => {
           </Link>
         </div>
       </div>
-      <Svg/>
+      <MySvg />
       {/* <img src={footer} alt="figma-pic"/> */}
       {/* <svg width="1349" height="250" viewBox="0 0 1280 250" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_6_7)">
