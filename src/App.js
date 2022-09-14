@@ -2,9 +2,10 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { LoginPage } from "./components/LoginPage";
 import { UserAccount } from "./components/UserAccount";
-import { Routes, Route, Switch } from "react-router-dom";
+import { Routes, Route,BrowserRouter } from "react-router-dom";
 import { Tasks } from "./components/Tasks";
-import { BrowserRouter } from "react-router-dom";
+
+
 
 function App() {
   return (
