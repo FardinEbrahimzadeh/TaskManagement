@@ -15,15 +15,12 @@ export const LoginPage = () => {
       validate={values => {
         let errors = {}
 
-        if (values.email) {
-
-          errors.name = "please Enter your email !"
-
+        if (!values.email) {
+          errors.email = "please Enter your email !"
         }
-        if (values.password) {
-
-          errors.name = "please Enter your password !"
-
+        
+        if (!values.password) {
+          errors.password = "please Enter your password !"
         }
 
         return errors;
@@ -44,23 +41,23 @@ export const LoginPage = () => {
                   <p className="email">ایمیل</p>
                   <div className="input-group mb-3">
                     {/* type=email */}
-                    <input onChange={handleChange} value={values.name} type="email" name="email" className="form-control" aria-label="Recipient's email" aria-describedby="basic-addon2" />
+                    <input onChange={handleChange} value={values.email} type="email" name="email" className="form-control" aria-label="Recipient's email" aria-describedby="basic-addon2" />
                   </div>
                   {
-                    errors.name && (
+                    errors.email && (
                       <div style={{ color: "red" }}>
-                        {errors.name}
+                        {errors.email}
                       </div>
                     )
                   }
                   <p className="password">رمزعبور</p>
                   <div className="input-group mb-3">
-                    <input type="password" name="password" className="form-control" aria-label="Recipient's password" aria-describedby="basic-addon2" />
+                    <input type="password" name="password" value={values.password} className="form-control" aria-label="Recipient's password" aria-describedby="basic-addon2" />
                   </div>
                   {
-                    errors.name && (
+                    errors.password && (
                       <div style={{ color: "red" }}>
-                        {errors.name}
+                        {errors.password}
                       </div>
                     )
                   }
