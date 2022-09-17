@@ -12,12 +12,20 @@ export const LoginPage = () => {
         console.log("Form values: ", values);
       }}
 
-      validate={ values => {
-        let errors ={}
+      validate={values => {
+        let errors = {}
 
-        if(!values.name){
-          errors.name ="please Enter your email!"
+        if (values.email) {
+
+          errors.name = "please Enter your email !"
+
         }
+        if (values.password) {
+
+          errors.name = "please Enter your password !"
+
+        }
+
         return errors;
       }}
 
@@ -27,7 +35,7 @@ export const LoginPage = () => {
 
 
       {
-        ({ handleSubmit, handleChange, values, errors}) => (
+        ({ handleSubmit, handleChange, values, errors }) => (
           <div>
             <div className="div1">
               <h6 className="firsthead" style={{ marginBottom: "30px" }}>به برنامه مدیریت وظایف خوش آمدید</h6>
@@ -36,21 +44,29 @@ export const LoginPage = () => {
                   <p className="email">ایمیل</p>
                   <div className="input-group mb-3">
                     {/* type=email */}
-                    <input onChange={handleChange} value={values.name} type="text" name="name" className="form-control" aria-label="Recipient's email" aria-describedby="basic-addon2" />
+                    <input onChange={handleChange} value={values.name} type="email" name="email" className="form-control" aria-label="Recipient's email" aria-describedby="basic-addon2" />
                   </div>
-                  <p className="password">رمزعبور</p>
-                  <div className="input-group mb-3">
-                    <input type="password" name="password" className="form-control" aria-label="Recipient's password" aria-describedby="basic-addon2" />
-                  </div>
-                  <br></br>
-                  <button type="submit" id="btn" className="btn btn-warning">ورود</button>
                   {
                     errors.name && (
-                      <div style={{color :"red"}}>
+                      <div style={{ color: "red" }}>
                         {errors.name}
                       </div>
                     )
                   }
+                  <p className="password">رمزعبور</p>
+                  <div className="input-group mb-3">
+                    <input type="password" name="password" className="form-control" aria-label="Recipient's password" aria-describedby="basic-addon2" />
+                  </div>
+                  {
+                    errors.name && (
+                      <div style={{ color: "red" }}>
+                        {errors.name}
+                      </div>
+                    )
+                  }
+                  <br></br>
+                  <button type="submit" id="btn" className="btn btn-warning">ورود</button>
+
                   <br></br>
                   <br></br>
                   <Link className="link" id="link" to="/User" style={{ marginLeft: "148px" }}>
