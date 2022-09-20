@@ -6,7 +6,13 @@ import { Formik } from 'formik';
 export const LoginPage = () => {
   return (
     <Formik
-      initialValues={{ name: '' }}
+      initialValues={
+        {
+          email: '',
+          password: ' '
+        }
+
+      }
 
       onSubmit={(values) => {
         console.log("Form values: ", values);
@@ -16,11 +22,17 @@ export const LoginPage = () => {
         let errors = {}
 
         if (!values.email) {
-          errors.email = "please Enter your email !"
+          errors.email = 'Required';
         }
-        
+        else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+          errors.email = 'Invalid email address';
+        }
+
         if (!values.password) {
           errors.password = "please Enter your password !"
+        }
+        else if (values.password.length < 8) {
+          errors.password = 'Must be 8 characters or more';
         }
 
         return errors;
@@ -32,7 +44,7 @@ export const LoginPage = () => {
 
 
       {
-        ({ handleSubmit, handleChange, values, errors }) => (
+        ({ handleSubmit, handleChange, values, errors, handleBlur, touched }) => (
           <div>
             <div className="div1">
               <h6 className="firsthead" style={{ marginBottom: "30px" }}>به برنامه مدیریت وظایف خوش آمدید</h6>
@@ -41,7 +53,14 @@ export const LoginPage = () => {
                   <p className="email">ایمیل</p>
                   <div className="input-group mb-3">
                     {/* type=email */}
-                    <input onChange={handleChange} value={values.email} type="email" name="email" className="form-control" aria-label="Recipient's email" aria-describedby="basic-addon2" />
+                    <input
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      type="email"
+                      name="email"
+                      className="form-control"
+                      aria-label="Recipient's email"
+                      aria-describedby="basic-addon2" />
                   </div>
                   {
                     errors.email && (
@@ -52,7 +71,15 @@ export const LoginPage = () => {
                   }
                   <p className="password">رمزعبور</p>
                   <div className="input-group mb-3">
-                    <input type="password" name="password" value={values.password} className="form-control" aria-label="Recipient's password" aria-describedby="basic-addon2" />
+                    <input
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      type="password"
+                      name="password"
+                      className="form-control"
+                      aria-label="Recipient's password"
+                      aria-describedby="basic-addon2"
+                    />
                   </div>
                   {
                     errors.password && (
